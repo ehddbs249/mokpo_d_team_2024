@@ -4,7 +4,8 @@
 <meta charset="UTF-8">
 <style> 
   body {
-    font-family: Arial, sans-serif;
+    font-family: Inter;
+    font-style: normal;
     background-color: #f4f4f4;
     margin: 0;
     padding: 0;
@@ -18,10 +19,11 @@
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     padding: 20px;
+    position: relative;
   }
 
   h3 {
-    color: #007bff;
+    color: #000000;
     text-align: center;
   }
 
@@ -37,8 +39,9 @@
 
   input[type="text"],
   input[type="email"],
-  input[type="password"] {
-    width: 100%;
+  input[type="password"],
+  input[type="submit"]{
+    width: calc(100% - 22px);
     padding: 10px;
     margin-bottom: 20px;
     border: 1px solid #ddd;
@@ -46,34 +49,50 @@
     box-sizing: border-box;
   }
 
-  input[type="submit"],
-  input[type="reset"] {
-    background-color: #007bff;
+  input[type="submit"]{
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: #282828;
     color: #fff;
     border: none;
-    padding: 10px 20px;
     border-radius: 3px;
     cursor: pointer;
     transition: background-color 0.3s ease;
   }
 
-  input[type="submit"]:hover,
-  input[type="reset"]:hover {
-    background-color: #0056b3;
+  input[type="submit"]:hover{
+    background-color: #444;
   }
+
 </style>
-<title>사용자 등록</title>
+
+<title>회원가입</title>
+
 </head>
 <body>
 <div class="container">
-	<h3>회원가입</h3>
-	<form action="#" th:action="@{/siteuser/signup}" th:object="${siteuser}" method="post">
-		<p>이름: <input type="text" th:field="*{name}"/></p>
-		<p>이메일: <input type="email" th:field="*{email}"/></p>
-		<p>암호: <input type="password" th:field="*{passwd}"/></p>
-		<p><input type="reset" value="취소"/>
-			<input type="submit" value="등록"/></p>
-	</form>
+    <h3>회원가입</h3>
+    <form id="signupForm" action="#" th:action="@{/siteuser/signup}" th:object="${siteuser}" method="post">
+        <p>이름 <input type="text" th:field="*{name}"/></p>
+        <p>이메일 <input type="email" th:field="*{email}"/></p>
+        <p>암호 <input id="password" type="password" th:field="*{passwd}"/></p>
+        <p>암호 확인 <input id="confirmPassword" type="password" style="width: calc(100% - 22px);"/></p>
+        <input type="submit" value="계정 만들기"/>
+    </form>
 </div>
+
+<script>
+    document.getElementById("signupForm").addEventListener("submit", function(event) {
+        var password = document.getElementById("password").value;
+        var confirmPassword = document.getElementById("confirmPassword").value;
+
+        if (password !== confirmPassword) {
+            alert("암호와 암호 확인이 일치하지 않습니다.");
+            event.preventDefault(); // 폼 제출 중지
+        }
+    });
+</script>
+
 </body>
 </html>
