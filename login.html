@@ -21,7 +21,7 @@
   }
 
   h3 {
-    color: #007bff;
+    color: #000000;
     text-align: center;
   }
 
@@ -45,9 +45,9 @@
     box-sizing: border-box;
   }
 
-  input[type="submit"],
-  input[type="reset"] {
-    background-color: #007bff;
+  input[type="submit"] {
+    width: 100%;
+    background-color: #000000;
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -56,44 +56,36 @@
     transition: background-color 0.3s ease;
   }
 
-  input[type="submit"]:hover,
-  input[type="reset"]:hover {
+  input[type="submit"]:hover {
     background-color: #0056b3;
   }
 
   a {
-    color: #007bff;
+    color: #000000;
     text-decoration: none;
   }
 
   a:hover {
     text-decoration: underline;
   }
+
+  .centered {
+    text-align: center;
+  }
 </style>
-<title>사용자 로그인</title>
+<title>로그인</title>
 </head>
 <body>
 <div class="container">
-   <h3>서점 로그인</h3>
-   <form action="#" th:action="@{/siteuser/login}" method="post">
-   <fieldset> 
-     <legend> 로그인 </legend>
-     <table>
-   <tr> 
-    <td> 아이디 </td><td><input type="email" name="email"></td>
-     </tr>
-     <tr>
-     <td> 비밀번호 </td><td><input type="password" name="passwd"></td>
-     </tr>
-    <tr><td colspan=2> 
-    <input type="submit" value="로그인">
-    <input type="reset" value="취소">
-    </td>
-     </tr>
-   </table>
-   </fieldset>
-   </form>
-   <p><a href="/siteuser/">처음으로</a></p>
+    <h3>서점 로그인</h3>
+    <form action="#" th:action="@{/siteuser/login}" method="post">
+        <p>이메일 <input type="email" name="email"></p>
+        <p>비밀번호 <input type="password" name="passwd"></p>
+        <p><input type="submit" value="로그인"></p>
+    </form>
+    <div class="centered">
+        <p><a href="/siteuser/signup">회원가입</a></p>
+    </div>
 </div>
 </body>
 </html>
