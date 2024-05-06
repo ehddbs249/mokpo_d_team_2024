@@ -4,7 +4,8 @@
 <meta charset="UTF-8">
 <style> 
   body {
-    font-family: Inter;
+    font-family: Inter, sans-serif;
+    font-size: 1.1em;
     font-style: normal;
     background-color: #f4f4f4;
     margin: 0;
@@ -26,7 +27,7 @@
     text-align: center;
   }
 
-  h3 {
+  h2 {
     color: #000000;
     text-align: center;
   }
@@ -39,6 +40,7 @@
     display: block;
     margin-bottom: 10px;
     font-weight: bold;
+    font-size: 1.1em;
   }
 
   input[type="text"],
@@ -51,6 +53,7 @@
     border: 1px solid #ddd;
     border-radius: 3px;
     box-sizing: border-box;
+    font-size: 1.1em;
   }
 
   input[type="submit"]{
@@ -63,6 +66,7 @@
     border-radius: 3px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    font-size: 1.1em;
   }
 
   input[type="submit"]:hover{
@@ -75,12 +79,12 @@
 </head>
 <body>
 <div class="container">
-    <h3>회원가입</h3>
+    <h2>회원가입</h2>
     <form id="signupForm" action="#" th:action="@{/siteuser/signup}" th:object="${siteuser}" method="post">
-        <p>이름 <input type="text" th:field="*{name}"/></p>
-        <p>이메일 <input type="email" th:field="*{email}"/></p>
-        <p>암호 <input id="password" type="password" th:field="*{passwd}"/></p>
-        <p>암호 확인 <input id="confirmPassword" type="password" style="width: calc(100% - 22px);"/></p>
+        <p><label for="name">이름</label> <input type="text" id="name" th:field="*{name}"/></p>
+        <p><label for="email">이메일</label> <input type="email" id="email" th:field="*{email}"/></p>
+        <p><label for="password">비밀번호</label> <input id="password" type="password" th:field="*{passwd}"/></p>
+        <p><label for="confirmPassword">비밀번호 확인</label> <input id="confirmPassword" type="password" style="width: calc(100% - 22px);"/></p>
         <input type="submit" value="계정 만들기"/>
     </form>
     
