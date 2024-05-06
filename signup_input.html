@@ -21,6 +21,10 @@
     padding: 20px;
     position: relative;
   }
+  
+  .centered {
+    text-align: center;
+  }
 
   h3 {
     color: #000000;
@@ -64,7 +68,6 @@
   input[type="submit"]:hover{
     background-color: #444;
   }
-
 </style>
 
 <title>회원가입</title>
@@ -80,6 +83,10 @@
         <p>암호 확인 <input id="confirmPassword" type="password" style="width: calc(100% - 22px);"/></p>
         <input type="submit" value="계정 만들기"/>
     </form>
+    
+    <div class="centered">
+        <p><a href="/siteuser/login">계정이 있으신가요?</a></p>
+    </div>
 </div>
 
 <script>
