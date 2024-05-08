@@ -1,0 +1,27 @@
+.footer {
+  height: 50vh;
+  background-color: rgba(0, 0, 0, 0.9);
+  padding: 70px 100px;
+  color: white;
+  padding-bottom: 0px;
+}
+
+.footer_column {
+  display: flex;
+  justify-content: space-around;
+}
+
+.footer_column_box_title {
+  margin-bottom: 50px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.footer_column_box_content {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer_column_box_content a {
+  margin-bottom: 30px;
+}

@@ -8,7 +8,7 @@
       src="https://kit.fontawesome.com/70cf0af2bf.js"
       crossorigin="anonymous"
     ></script>
-    <title>Sign-Up</title>
+    <title>Login</title>
   </head>
   <body>
     <div class="header">
@@ -38,26 +38,23 @@
 
     <div class="sign-up">
       <div class="sign-up__screen">
-        <div class="sign-up__screen__title">회원가입</div>
-        <p th:text="|${name}님, 등록이 완료되었습니다.|" />
-        <p>회원가입이 완료되었습니다.</p>
-        <p class="sign-up__screen__welcome">
-          사이트이름에서 읽지 않는 책을 판매하고
-        </p>
-        <p class="sign-up__screen__welcome">
-          원가보다 낮은 가격으로 책을 구하는
-        </p>
-        <p class="sign-up__screen__welcome">
-          슬기로운 구매 습관을 만들어보세요!
-        </p>
-        <form action="">
-          <input
-            class="btn"
-            type="button"
-            value="로그인"
-            onClick="location.href='/siteuser/login'"
-          />
+        <div class="sign-up__screen__title">로그인</div>
+        <form
+          id="sign-up__screen__form"
+          action="#"
+          th:action="@{/siteuser/login}"
+          method="post"
+        >
+          <div>이메일</div>
+          <input type="email" name="email"/>
+          <div>비밀번호</div>
+          <input type="password" name="passwd" />
+          <div></div>
+          <input class="btn" type="submit" value="로그인" />
         </form>
+        <a class="sign-up__screen__search" href="/siteuser/signup_input"
+          >회원가입</a
+        >
       </div>
     </div>
 

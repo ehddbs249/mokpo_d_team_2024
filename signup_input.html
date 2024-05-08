@@ -1,109 +1,103 @@
 <!DOCTYPE html>
-<html xmlns:th="https://www.thymeleaf.org">
-<head>
-<meta charset="UTF-8">
-<style> 
-  body {
-    font-family: Inter, sans-serif;
-    font-size: 1.1em;
-    font-style: normal;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  .container {
-    width: 500px;
-    margin: 50px auto;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    position: relative;
-  }
-  
-  .centered {
-    text-align: center;
-  }
-
-  h2 {
-    color: #000000;
-    text-align: center;
-  }
-
-  form {
-    margin-top: 20px;
-  }
-
-  label {
-    display: block;
-    margin-bottom: 10px;
-    font-weight: bold;
-    font-size: 1.1em;
-  }
-
-  input[type="text"],
-  input[type="email"],
-  input[type="password"],
-  input[type="submit"]{
-    width: calc(100% - 22px);
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    border-radius: 3px;
-    box-sizing: border-box;
-    font-size: 1.1em;
-  }
-
-  input[type="submit"]{
-    width: calc(100% - 22px);
-    padding: 10px;
-    margin-bottom: 20px;
-    background-color: #282828;
-    color: #fff;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    font-size: 1.1em;
-  }
-
-  input[type="submit"]:hover{
-    background-color: #444;
-  }
-</style>
-
-<title>회원가입</title>
-
-</head>
-<body>
-<div class="container">
-    <h2>회원가입</h2>
-    <form id="signupForm" action="#" th:action="@{/siteuser/signup}" th:object="${siteuser}" method="post">
-        <p><label for="name">이름</label> <input type="text" id="name" th:field="*{name}"/></p>
-        <p><label for="email">이메일</label> <input type="email" id="email" th:field="*{email}"/></p>
-        <p><label for="password">비밀번호</label> <input id="password" type="password" th:field="*{passwd}"/></p>
-        <p><label for="confirmPassword">비밀번호 확인</label> <input id="confirmPassword" type="password" style="width: calc(100% - 22px);"/></p>
-        <input type="submit" value="계정 만들기"/>
-    </form>
-    
-    <div class="centered">
-        <p><a href="/siteuser/login">계정이 있으신가요?</a></p>
+<html xmlns:th="https://www.thymeleaf.org" lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+    <script
+      src="https://kit.fontawesome.com/70cf0af2bf.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Sign-Up</title>
+  </head>
+  <body>
+    <div class="header">
+      <div class="header-title">Bookcycle</div>
+      <div class="header-category">
+        <div>Home</div>
+        <div>Shop</div>
+        <div>About</div>
+        <div>Sign Up</div>
+      </div>
+      <div class="header-column">
+        <div class="header-column__search">
+          <form action="">
+            <input
+              type="text"
+              name="search"
+              placeholder="What are you looing for?"
+            />
+          </form>
+        </div>
+        <div class="header-column__icons">
+          <a href="#" class="fas fa-shopping-cart"></a>
+          <a href="#" class="far fa-user"></a>
+        </div>
+      </div>
     </div>
-</div>
 
-<script>
-    document.getElementById("signupForm").addEventListener("submit", function(event) {
-        var password = document.getElementById("password").value;
-        var confirmPassword = document.getElementById("confirmPassword").value;
+    <div class="sign-up">
+      <div class="sign-up__screen">
+        <div class="sign-up__screen__title">회원가입</div>
+        <form
+          id="sign-up__screen__form"
+          action="#"
+          th:action="@{/siteuser/signup}"
+          th:object="${siteuser}"
+          method="post"
+        >
+          <div>이름</div>
+          <input type="text" th:field="*{name}" />
+          <div>이메일</div>
+          <input type="email" th:field="*{email}" />
+          <div>비밀번호</div>
+          <input type="password" th:field="*{passwd}" />
+          <div></div>
+          <input class="btn" type="submit" value="계정 만들기" />
+        </form>
+        <a class="sign-up__screen__search" href="#">계정이 있으신가요?</a>
+      </div>
+    </div>
 
-        if (password !== confirmPassword) {
-            alert("암호와 암호 확인이 일치하지 않습니다.");
-            event.preventDefault();
-        }
-    });
-</script>
-
-</body>
+    <div class="footer">
+      <div class="footer_column">
+        <div class="footer_column_box">
+          <div class="footer_column_box_title">Category</div>
+          <div class="footer_column_box_content">
+            <a href="#">장르소설</a>
+            <a href="#">시/에세이</a>
+            <a href="#">청소년문학</a>
+            <a href="#">아동문학</a>
+          </div>
+        </div>
+        <div class="footer_column_box">
+          <div class="footer_column_box_title">About</div>
+          <div class="footer_column_box_content">
+            <a href="#">서점 북사이클</a>
+            <a href="#">사용 가이드</a>
+            <a href="#">FAQ</a>
+          </div>
+        </div>
+        <div class="footer_column_box">
+          <div class="footer_column_box_title">Account</div>
+          <div class="footer_column_box_content">
+            <a href="#">마이페이지</a>
+            <a href="#">로그인/회원가입</a>
+            <a href="#">장바구니</a>
+            <a href="#">마이북</a>
+          </div>
+        </div>
+        <div class="footer_column_box">
+          <div class="footer_column_box_title">Quick Link</div>
+          <div class="footer_column_box_content">
+            <a href="#">개인정보처리방침</a>
+            <a href="#">이용약관</a>
+            <a href="#">운영정책</a>
+            <a href="#">Contact Us</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer_coper"></div>
+    </div>
+  </body>
 </html>
