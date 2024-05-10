@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" th:href="@{css/style.css}" href="css/style.css" />
+    <script
+      src="https://kit.fontawesome.com/70cf0af2bf.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>MainPage</title>
+  </head>
+  <body>
+    <div class="header">
+      <div class="header-title"><a href="/siteuser">Bookcycle</a></div>
+      <div class="header-category">
+        <div><a href="/siteuser">Home</a></div>
+        <div>Shop</div>
+        <div>About</div>
+        <div><a href="/siteuser/signup">Sign Up</a></div>
+      </div>
+      <div class="header-column">
+        <div class="header-column__search">
+          <form action="">
+            <input
+              type="text"
+              name="search"
+              placeholder="What are you looing for?"
+            />
+          </form>
+        </div>
+        <div class="header-column__icons">
+          <a href="/siteuser/login" class="fas fa-shopping-cart"></a>
+          <a href="/siteuser/login" class="far fa-user"></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="shop">
+      <div class="advertiser"></div>
+      <div class="shop-main">
+        <div class="shop-main-category">
+          <div id="line"></div>
+          <div class="shop-main-category__box">
+            <div class="category">
+              <span class="category_text">전체 도서 보기</span>
+              <div class="category_vector">
+                <a href="#" class="fas fa-arrow-right"></a>
+              </div>
+            </div>
+            <div class="category">
+              <span class="category_text">장르 소설</span>
+              <div class="category_vector">
+                <a href="#" class="fas fa-arrow-right"></a>
+              </div>
+            </div>
+            <div class="category">
+              <span class="category_text">시/에세이</span>
+              <div class="category_vector">
+                <a href="#" class="fas fa-arrow-right"></a>
+              </div>
+            </div>
+            <div class="category">
+              <span class="category_text">청소년문학</span>
+              <div class="category_vector">
+                <a href="#" class="fas fa-arrow-right"></a>
+              </div>
+            </div>
+            <div class="category">
+              <span class="category_text">아동문학</span>
+              <div class="category_vector">
+                <a href="#" class="fas fa-arrow-right"></a>
+              </div>
+            </div>
+            <div class="category">
+              <span class="category_text">외국어/문서</span>
+              <div class="category_vector">
+                <a href="#" class="fas fa-arrow-right"></a>
+              </div>
+            </div>
+            <div class="category">
+              <span class="category_text">인문/과학/자기계발</span>
+              <div class="category_vector">
+                <a href="#" class="fas fa-arrow-right"></a>
+              </div>
+            </div>
+            <div class="category">
+              <span class="category_text">교재/수험서/참고서</span>
+              <div class="category_vector">
+                <a href="#" class="fas fa-arrow-right"></a>
+              </div>
+            </div>
+            <div class="category">
+              <span class="category_text">잡지/만화</span>
+              <div class="category_vector">
+                <a href="#" class="fas fa-arrow-right"></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="shop-main-search">
+          <form class="search-form">
+            <input
+              class="search-form__input"
+              type="text"
+              placeholder="어떤 책을 찾고 계신가요?"
+            />
+            <input type="submit" class="btn" value="검색하기" />
+          </form>
+        </div>
+      </div>
+      <div class="booklist">
+        <div class="booklist__button">
+          <div class="button__not__select">
+            <span> 가장 최근에 들어온 도서 </span>
+          </div>
+          <div class="button__select">
+            <span> 북사이클이 추천하는 도서 </span>
+          </div>
+        </div>
+        <div class="booklist_container">
+          <div class="booklist_container__floor">
+            <div class="bookbox">
+              <div class="booklist_container__floor__img"></div>
+              <div class="booklist_container__floor__content">
+                <div>책 제목입니다아아아아</div>
+                <div>저자 이름은 여기</div>
+                <div>
+                  <div>
+                    <span> 7,000₩ </span>
+                  </div>
+                  <div>
+                    <span> (최상) </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="bookbox">
+              <div class="booklist_container__floor__img"></div>
+              <div class="booklist_container__floor__content">
+                <div>책 제목입니다아아아아</div>
+                <div>저자 이름은 여기</div>
+                <div>
+                  <div>
+                    <span> 7,000₩ </span>
+                  </div>
+                  <div>
+                    <span> (최상) </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="bookbox">
+              <div class="booklist_container__floor__img"></div>
+              <div class="booklist_container__floor__content">
+                <div>책 제목입니다아아아아</div>
+                <div>저자 이름은 여기</div>
+                <div>
+                  <div>
+                    <span> 7,000₩ </span>
+                  </div>
+                  <div>
+                    <span> (최상) </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="bookbox">
+              <div class="booklist_container__floor__img"></div>
+              <div class="booklist_container__floor__content">
+                <div>책 제목입니다아아아아</div>
+                <div>저자 이름은 여기</div>
+                <div>
+                  <div>
+                    <span> 7,000₩ </span>
+                  </div>
+                  <div>
+                    <span> (최상) </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="booklist_container__floor">
+            <div class="bookbox">
+              <div class="booklist_container__floor__img"></div>
+              <div class="booklist_container__floor__content">
+                <div>책 제목입니다아아아아</div>
+                <div>저자 이름은 여기</div>
+                <div>
+                  <div>
+                    <span> 7,000₩ </span>
+                  </div>
+                  <div>
+                    <span> (최상) </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="bookbox">
+              <div class="booklist_container__floor__img"></div>
+              <div class="booklist_container__floor__content">
+                <div>책 제목입니다아아아아</div>
+                <div>저자 이름은 여기</div>
+                <div>
+                  <div>
+                    <span> 7,000₩ </span>
+                  </div>
+                  <div>
+                    <span> (최상) </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="bookbox">
+              <div class="booklist_container__floor__img"></div>
+              <div class="booklist_container__floor__content">
+                <div>책 제목입니다아아아아</div>
+                <div>저자 이름은 여기</div>
+                <div>
+                  <div>
+                    <span> 7,000₩ </span>
+                  </div>
+                  <div>
+                    <span> (최상) </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="bookbox">
+              <div class="booklist_container__floor__img"></div>
+              <div class="booklist_container__floor__content">
+                <div>책 제목입니다아아아아</div>
+                <div>저자 이름은 여기</div>
+                <div>
+                  <div>
+                    <span> 7,000₩ </span>
+                  </div>
+                  <div>
+                    <span> (최상) </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="booklist_container__floor">
+            <div class="bookbox">
+              <div class="booklist_container__floor__img"></div>
+              <div class="booklist_container__floor__content">
+                <div>책 제목입니다아아아아</div>
+                <div>저자 이름은 여기</div>
+                <div>
+                  <div>
+                    <span> 7,000₩ </span>
+                  </div>
+                  <div>
+                    <span> (최상) </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="bookbox">
+              <div class="booklist_container__floor__img"></div>
+              <div class="booklist_container__floor__content">
+                <div>책 제목입니다아아아아</div>
+                <div>저자 이름은 여기</div>
+                <div>
+                  <div>
+                    <span> 7,000₩ </span>
+                  </div>
+                  <div>
+                    <span> (최상) </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="bookbox">
+              <div class="booklist_container__floor__img"></div>
+              <div class="booklist_container__floor__content">
+                <div>책 제목입니다아아아아</div>
+                <div>저자 이름은 여기</div>
+                <div>
+                  <div>
+                    <span> 7,000₩ </span>
+                  </div>
+                  <div>
+                    <span> (최상) </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="bookbox">
+              <div class="booklist_container__floor__img"></div>
+              <div class="booklist_container__floor__content">
+                <div>책 제목입니다아아아아</div>
+                <div>저자 이름은 여기</div>
+                <div>
+                  <div>
+                    <span> 7,000₩ </span>
+                  </div>
+                  <div>
+                    <span> (최상) </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="footer_column">
+        <div class="footer_column_box">
+          <div class="footer_column_box_title">Category</div>
+          <div class="footer_column_box_content">
+            <a href="#">장르소설</a>
+            <a href="#">시/에세이</a>
+            <a href="#">청소년문학</a>
+            <a href="#">아동문학</a>
+          </div>
+        </div>
+        <div class="footer_column_box">
+          <div class="footer_column_box_title">About</div>
+          <div class="footer_column_box_content">
+            <a href="#">서점 북사이클</a>
+            <a href="#">사용 가이드</a>
+            <a href="#">FAQ</a>
+          </div>
+        </div>
+        <div class="footer_column_box">
+          <div class="footer_column_box_title">Account</div>
+          <div class="footer_column_box_content">
+            <a href="#">마이페이지</a>
+            <a href="#">로그인/회원가입</a>
+            <a href="#">장바구니</a>
+            <a href="#">마이북</a>
+          </div>
+        </div>
+        <div class="footer_column_box">
+          <div class="footer_column_box_title">Quick Link</div>
+          <div class="footer_column_box_content">
+            <a href="#">개인정보처리방침</a>
+            <a href="#">이용약관</a>
+            <a href="#">운영정책</a>
+            <a href="#">Contact Us</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer_coper"></div>
+    </div>
+  </body>
+</html>
