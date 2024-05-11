@@ -2,11 +2,152 @@
 <html xmlns:th="https://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>사용자 로그인 완료</title>
+<style> 
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 16px;
+  }
+
+  .order-history-button {
+    width: 236px;
+    height: 54px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    background-color: #EFEFEF;
+    color: #282828;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 54px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+  }
+
+  .my-page {
+    position: absolute;
+    width: 200px;
+    height: 29px;
+    left: 50%;
+    top: 200px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    color: #282828;
+  }
+
+ .login-box {
+    box-sizing: border-box;
+    position: absolute;
+    width: 720px;
+    height: 728px;
+    left: 396px;
+    top: 292px;
+    background: #FFFFFF;
+    border: 1px solid #858585;
+    border-radius: 20px;
+  }
+
+  .personal-info-button {
+    position: absolute;
+    width: 720px;
+    height: 54px;
+    left: 396px;
+    top: 1060px;
+    background: #282828;
+    border-radius: 4px;
+    text-align: center;
+    line-height: 54px;
+    color: #fff;
+    font-size: 1.1em;
+    cursor: pointer;
+  }
+
+  .personal-info-button:hover {
+    background: #4d4d4d;
+  }
+
+  .my-book-button {
+    position: absolute;
+    width: 236px;
+    height: 54px;
+    left: calc(50% - 118px);
+    top: 0px;
+    background: #7A7A7A;
+    border-radius: 4px;
+    text-align: center;
+    line-height: 54px;
+    color: #fff;
+    font-size: 1.1em;
+    cursor: pointer;
+  }
+
+  .my-book-button:hover {
+    background: #4d4d4d;
+  }
+  
+  .frame-827 {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 8px;
+    position: absolute;
+    width: 700px;
+    height: 54px;
+    right: 0px;
+    top: 518px;
+  }
+  
+  .frame-828 {
+    position: absolute;
+    width: 480px;
+    height: 568px;
+    left: 340px;
+    top: 100px;
+  }
+  
+  .frame-823 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 8px;
+    position: absolute;
+    width: 480px;
+    height: 186px;
+    left: -215px;
+    top: 230px;
+  }
+</style>
+<title>mypage</title>
 </head>
 <body>
-	<h3>사용자 로그인 완료</h3>
-	<p th:text="${session.email}"/>
-	<p><a href="/siteuser/">처음으로</a></p>
+<div class="my-page">마이페이지</div>
+<div class="login-box">
+<div class="frame-828">
+<div class="frame-823">
+    <p>아이디 <span th:text="${session.id}"></span></p>
+    <p>이메일 <span th:text="${session.email}"></span></p>
+    <p>비밀번호 <span th:text="${session.password}"></span></p>
+    <p>주소 <span th:text="${session.address}"></span></p>
+</div>
+<div class="frame-827">
+    <a class="order-history-button" href="/siteuser/orderhistory">주문내역</a>
+    <a class="my-book-button" href="/siteuser/mybook">마이북</a>
+</div>
+</div>
+</div>
+<div class="personal-info-button">
+    <p><a href ="/siteuser/information/">개인정보 수정하기</a></p>
+</div>
 </body>
 </html>
