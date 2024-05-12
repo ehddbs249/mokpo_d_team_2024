@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <link rel="stylesheet" th:href="@{css/style.css}" />
+  <script src="https://kit.fontawesome.com/70cf0af2bf.js" crossorigin="anonymous"></script>
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet" />
+  <link href="css/responsive.css" rel="stylesheet" />
+
+  <style>
+    #circle {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      background-color: #4d4d4d;
+    }
+
+    body {
+      
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-size: 16px;
+    }
+    .order-history-button {
+    width: 236px;
+    height: 54px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    background-color: #EFEFEF;
+    color: #282828;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 54px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+  }
+
+  .my-page {
+    position: absolute;
+    width: 200px;
+    height: 29px;
+    left: 50%;
+    top: 200px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    color: #282828;
+  }
+
+ .login-box {
+    box-sizing: border-box;
+    position: absolute;
+    width: 720px;
+    height: 728px;
+    left: 396px;
+    top: 292px;
+    background: #FFFFFF;
+    border: 1px solid #858585;
+    border-radius: 20px;
+  }
+
+  .personal-info-button {
+    position: absolute;
+    width: 720px;
+    height: 54px;
+    left: 396px;
+    top: 1060px;
+    background: #282828;
+    border-radius: 4px;
+    text-align: center;
+    line-height: 54px;
+    color: #fff;
+    font-size: 1.1em;
+    cursor: pointer;
+  }
+
+  .personal-info-button:hover {
+    background: #4d4d4d;
+  }
+
+  .my-book-button {
+    position: absolute;
+    width: 236px;
+    height: 54px;
+    left: calc(50% - 118px);
+    top: 0px;
+    background: #7A7A7A;
+    border-radius: 4px;
+    text-align: center;
+    line-height: 54px;
+    color: #fff;
+    font-size: 1.1em;
+    cursor: pointer;
+  }
+
+  .my-book-button:hover {
+    background: #4d4d4d;
+  }
+  
+  .frame-827 {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 8px;
+    position: absolute;
+    width: 700px;
+    height: 54px;
+    right: 0px;
+    top: 518px;
+  }
+  
+  .frame-828 {
+    position: absolute;
+    width: 480px;
+    height: 568px;
+    left: 340px;
+    top: 100px;
+  }
+  
+  .frame-823 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 8px;
+    position: absolute;
+    width: 480px;
+    height: 186px;
+    left: -215px;
+    top: 230px;
+  }
+  
+  </style>
+
+  <title>Bookcycle</title>
+
+
+</head>
+
+<body>
+
+  <!-- header section starts -->
+
+<header>
+
+  <div class="header-title">
+    <a href="home.html">Bookcycle</a>
+  </div>
+  <div class="header-category">
+      <div><a href="home.html">Home</a></div>
+      <div><a href="shop.html">Shop</a></div>
+      <div><a href="about.html">About</a></div>
+      <div><a href="signup.html">Sign Up</a></div>
+  </div>
+  <div class="header-column">
+      <div class="header-column__search">
+        <form action="#">
+          <input type="text" name="search" placeholder="What are you looing for?"/>
+          <a href="serch.html" class="fas fa-magnifying-glass"></a>
+        </form>
+      </div>
+      <div class="header-column__icons">
+        <a href="/siteuser/login" class="fas fa-shopping-cart"></a>
+        <a href="/siteuser/login" class="far fa-user"></a>
+      </div>
+  </div>
+
+</header>
+
+<!-- header section end -->
+
+    <div class="my-page">마이페이지</div>
+    <div class="login-box">
+      <div class="frame-828">
+        <div id="circle"></div>
+        <div>
+          <p><span th:text="${user.name}">판매자 닉네임</span></p>
+          <p><span th:text="|북사이클 ${user.orderhistory}회|"> 북사이클 000회</span></p>
+        </div>
+        <div class="frame-823">
+          <p><strong>아이디</strong> <span th:text="${session.id}">abcdefg</span></p>
+          <p><strong>이메일</strong> <span th:text="${session.email}">abcdefg@bcycle.kr</span></p>
+          <p><strong>비밀번호</strong> <span th:text="${session.password}">Abcdefg1234!</span></p>
+          <p><strong>주소</strong> <span th:text="${session.address}">전라남도 무안군 청계면 영산로 1666</span></p>
+        </div>
+        <div class="frame-827">
+          <a class="order-history-button" href="/siteuser/orderhistory">주문내역</a>
+          <a class="my-book-button" href="/siteuser/mybook">마이북</a>
+        </div>
+      </div>
+    </div>
+    <div class="personal-info-button">
+        <p><a href ="/siteuser/information/">개인정보 수정하기</a></p>
+    </div>
+
+
+</body>
+</html>

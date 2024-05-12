@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+
+  <head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <link rel="stylesheet" th:href="@{css/style.css}" />
+    <script src="https://kit.fontawesome.com/70cf0af2bf.js" crossorigin="anonymous"></script>
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <link href="css/responsive.css" rel="stylesheet" />
+    
+
+    <title>Bookcycle</title>
+
+  </head>
+
+<body>
+  <!-- header section starts -->
+
+<header>
+
+  <div class="header-title">
+    <a href="home.html">Bookcycle</a>
+  </div>
+  <div class="header-category">
+      <div><a href="home.html">Home</a></div>
+      <div><a href="shop.html">Shop</a></div>
+      <div><a href="about.html">About</a></div>
+      <div><a href="signup.html">Sign Up</a></div>
+  </div>
+  <div class="header-column">
+      <div class="header-column__search">
+        <form action="#">
+          <input type="text" name="search" placeholder="What are you looing for?"/>
+          <a href="serch.html" class="fas fa-magnifying-glass"></a>
+        </form>
+      </div>
+      <div class="header-column__icons">
+        <a href="/siteuser/login" class="fas fa-shopping-cart"></a>
+        <a href="/siteuser/login" class="far fa-user"></a>
+      </div>
+  </div>
+
+</header>
+
+<!-- header section end -->
+  
+
+<!-- title section starts-->
+  <div class="index">
+    <div class="index-text">
+      <div>recycle BOOKSHOP</div>
+      <div>for the</div>
+      <div id="last-line">
+        <div id="small-text">
+          <div>다독가들을 위한</div>
+          <div>중고서점</div>
+        </div>
+        <div id="last-line_bookworm">BOOKworm</div>
+      </div>
+    </div>
+    <div class="index-form">
+      <div>어떤 책을 찾고 계신가요?</div>
+      <div class="index-form__input">
+        <form action="">
+          <input type="text" name="title" />
+          <input type="text" name="author" />
+          <input type="text" name="condition" />
+          <input type="text" name="price" />
+        </form>
+      </div> 
+        <div class="button_con">
+          <button class="btn">검색하기</button>
+        </div>
+    </div>
+  </div>
+<!-- end title section -->
+
+  <!-- footer section starts -->
+
+  <section class="footer">
+
+    <div class="box-container">
+
+      <div class="box">
+        <h3>Shop</h3>
+          <a href="#">장르소설</a>
+          <a href="#">시/에세이</a>
+          <a href="#">청소년문학</a>
+          <a href="#">아동문학</a>
+      </div>
+
+      <div class="box">
+        <h3>About</h3>
+        <a href="#">북사이클</a>
+        <a href="#">사용 가이드</a>
+        <a href="#">FAQ</a>
+      </div>
+
+      <div class="box">
+        <h3>Account</h3>
+        <a href="#">마이페이지</a>
+        <a href="#">마이북</a>
+        <a href="#">주문내역</a>
+        <a href="#">장바구니</a>
+      </div>
+
+      <div class="box">
+        <h3>Quick Link</h3>
+        <a href="#">개인정보처리방침</a>
+        <a href="#">이용약관</a>
+        <a href="#">운영정책</a>
+      </div>
+
+      <div class="box">
+        <h3>Contact Us</h3>
+        <a href="#">+82 10-1234-5678</a>
+        <a href="#">bookcycle@bkcy.kr</a>
+        <a href="#">전남 무안군 청계면 1666</a>
+        <img src="images/sns.png" alt="">
+      </div>
+
+    </div>
+
+    <div class="credit"> created by <span> mnu. wp. teamD </span> | all rights reserved. </div>
+
+  </section>
+
+  <!-- footer section ends-->
+
+
+</body>
+
+</html>

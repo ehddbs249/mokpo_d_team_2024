@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <link rel="stylesheet" th:href="@{css/style.css}" />
+  <script src="https://kit.fontawesome.com/70cf0af2bf.js" crossorigin="anonymous"></script>
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet" />
+  <link href="css/responsive.css" rel="stylesheet" />
+
+  <style>
+    #bookrec {
+        width: 30px;
+        height: 30px;
+        background-color: #4d4d4d;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-size: 16px;
+    }
+    .order-history-button {
+    width: 236px;
+    height: 54px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    background-color: #EFEFEF;
+    color: #282828;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 54px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+  }
+
+  .my-page {
+    position: absolute;
+    width: 200px;
+    height: 29px;
+    left: 50%;
+    top: 200px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    color: #282828;
+  }
+
+ .login-box {
+    box-sizing: border-box;
+    position: absolute;
+    width: 720px;
+    height: 728px;
+    left: 396px;
+    top: 292px;
+    background: #FFFFFF;
+    border: 1px solid #858585;
+    border-radius: 20px;
+  }
+
+  .personal-info-button {
+    position: absolute;
+    width: 720px;
+    height: 54px;
+    left: 396px;
+    top: 1060px;
+    background: #282828;
+    border-radius: 4px;
+    text-align: center;
+    line-height: 54px;
+    color: #fff;
+    font-size: 1.1em;
+    cursor: pointer;
+  }
+
+  .personal-info-button:hover {
+    background: #4d4d4d;
+  }
+
+  .my-book-button {
+    position: absolute;
+    width: 236px;
+    height: 54px;
+    left: calc(50% - 118px);
+    top: 0px;
+    background: #7A7A7A;
+    border-radius: 4px;
+    text-align: center;
+    line-height: 54px;
+    color: #fff;
+    font-size: 1.1em;
+    cursor: pointer;
+  }
+
+  .my-book-button:hover {
+    background: #4d4d4d;
+  }
+  
+  .frame-827 {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 8px;
+    position: absolute;
+    width: 700px;
+    height: 54px;
+    right: 0px;
+    top: 518px;
+  }
+  
+  .frame-828 {
+    position: absolute;
+    width: 480px;
+    height: 568px;
+    left: 340px;
+    top: 100px;
+  }
+  
+  .frame-823 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 8px;
+    position: absolute;
+    width: 480px;
+    height: 186px;
+    left: -215px;
+    top: 230px;
+  }
+  
+  </style>
+
+  <title>Bookcycle</title>
+
+</head>
+
+<body>
+    <!-- header section starts -->
+
+<header>
+
+  <div class="header-title">
+    <a href="home.html">Bookcycle</a>
+  </div>
+  <div class="header-category">
+      <div><a href="home.html">Home</a></div>
+      <div><a href="shop.html">Shop</a></div>
+      <div><a href="about.html">About</a></div>
+      <div><a href="signup.html">Sign Up</a></div>
+  </div>
+  <div class="header-column">
+      <div class="header-column__search">
+        <form action="#">
+          <input type="text" name="search" placeholder="What are you looing for?"/>
+          <a href="serch.html" class="fas fa-magnifying-glass"></a>
+        </form>
+      </div>
+      <div class="header-column__icons">
+        <a href="/siteuser/login" class="fas fa-shopping-cart"></a>
+        <a href="/siteuser/login" class="far fa-user"></a>
+      </div>
+  </div>
+
+</header>
+
+<!-- header section end -->
+    <h2>판매하기</h2>
+    <form action="#" th:action="@{/siteuser/bbs/sell}" th:object="${book}" method="post">
+      <div class="book_sell">
+        <div class="book_sell_left">
+          <div class="book_file">
+            <p>표지 이미지</p>
+            <div id=bookrec>책 표지</div>
+          </div>
+          <div class="select_category">
+            <select name="category">
+                <option selected value="">카테고리</option>
+                <option value="ca_ganre">장르소설</option>
+                <option value="002">시/에세이</option>
+                <option value="003">청소년문학</option>
+                <option value="004">아동문학</option>
+                <option value="004">외국어/문서</option>
+                <option value="004">인문/과학/자기계발</option>
+                <option value="004">교재/수험서/참고서</option>
+                <option value="004">잡지/만화</option>
+            </select>
+          </div>
+          <div class="select_condition">
+            <select name="condition">
+                <option selected value="">책 상태</option>
+                <option value="001">최상</option>
+                <option value="002">상</option>
+                <option value="003">중</option>
+                <option value="004">하</option>
+                <option value="004">최하</option>
+              </select>
+          </div>
+        </div>
+        <div class="book_sell_right">
+          <!-- 등록버튼 -->
+          <div>
+            <input type="submit" value="글 작성하기"/>
+          </div>
+          <div class="text_default">
+            <p>제목</p>
+            <input type="text" th:field=="*{b.title}"/>
+          </div>
+          <div class="text_default">
+            <p>저자</p>
+            <input type="text" th:field=="*{b.author}"/>
+          </div>
+          <div class="text_default">
+            <p>출판사</p>
+            <input type="text" th:field=="*{b.publish}"/>
+          </div>
+          <div class="text_default">
+            <p>정가</p>
+            <input type="text" th:field=="*{b.price}"/>
+          </div>
+          <div class="text_default">
+            <p>판매가</p>
+            <input type="text" th:field=="*{b.sellprice}"/>
+          </div>
+        </div>
+      </div>
+      <div class="text_default">
+        <p>책 소개</p>
+        <input type="text" th:field=="*{b.body}"/>
+      </div>
+    </form>
+
+<!-- footer section starts -->
+
+<section class="footer">
+
+  <div class="box-container">
+
+    <div class="box">
+      <h3>Shop</h3>
+        <a href="#">장르소설</a>
+        <a href="#">시/에세이</a>
+        <a href="#">청소년문학</a>
+        <a href="#">아동문학</a>
+    </div>
+
+    <div class="box">
+      <h3>About</h3>
+      <a href="#">북사이클</a>
+      <a href="#">사용 가이드</a>
+      <a href="#">FAQ</a>
+    </div>
+
+    <div class="box">
+      <h3>Account</h3>
+      <a href="#">마이페이지</a>
+      <a href="#">마이북</a>
+      <a href="#">주문내역</a>
+      <a href="#">장바구니</a>
+    </div>
+
+    <div class="box">
+      <h3>Quick Link</h3>
+      <a href="#">개인정보처리방침</a>
+      <a href="#">이용약관</a>
+      <a href="#">운영정책</a>
+    </div>
+
+    <div class="box">
+      <h3>Contact Us</h3>
+      <a href="#">+82 10-1234-5678</a>
+      <a href="#">bookcycle@bkcy.kr</a>
+      <a href="#">전남 무안군 청계면 1666</a>
+      <img src="images/sns.png" alt="">
+    </div>
+
+  </div>
+
+  <div class="credit"> created by <span> mnu. wp. teamD </span> | all rights reserved. </div>
+
+</section>
+
+<!-- footer section ends-->
+
+</body>
+</html>

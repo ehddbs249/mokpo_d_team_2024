@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <link rel="stylesheet" th:href="@{css/style.css}" />
+  <script src="https://kit.fontawesome.com/70cf0af2bf.js" crossorigin="anonymous"></script>
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet" />
+  <link href="css/responsive.css" rel="stylesheet" />
+  
+
+  <title>Bookcycle</title>
+
+</head>
+
+<body>
+
+<!-- header section starts -->
+
+<header>
+
+  <div class="header-title">
+    <a href="home.html">Bookcycle</a>
+  </div>
+  <div class="header-category">
+      <div><a href="home.html">Home</a></div>
+      <div><a href="shop.html">Shop</a></div>
+      <div><a href="about.html">About</a></div>
+      <div><a href="signup.html">Sign Up</a></div>
+  </div>
+  <div class="header-column">
+      <div class="header-column__search">
+        <form action="#">
+          <input type="text" name="search" placeholder="What are you looing for?"/>
+          <a href="serch.html" class="fas fa-magnifying-glass"></a>
+        </form>
+      </div>
+      <div class="header-column__icons">
+        <a href="/siteuser/login" class="fas fa-shopping-cart"></a>
+        <a href="/siteuser/login" class="far fa-user"></a>
+      </div>
+  </div>
+
+</header>
+
+<!-- header section end -->
+
+
+
+<div class="sign-up">
+  <div class="sign-up__screen">
+    <div class="sign-up__title">회원가입</div>
+    <p th:text="|${name}님, 등록이 완료되었습니다.|" />
+          <p>회원가입이 완료되었습니다.</p>
+            <p class="sign-up__screen__welcome">
+              사이트이름에서 읽지 않는 책을 판매하고
+            </p>
+            <p class="sign-up__screen__welcome">
+              원가보다 낮은 가격으로 책을 구하는
+            </p>
+            <p class="sign-up__screen__welcome">
+              슬기로운 구매 습관을 만들어보세요!
+            </p>
+            <button type="btn" onclick="location.href='login.html'" style="width: 400px; height: 54px;border-radius: 7px;
+            background-color: rgba(0, 0, 0, 0.9);
+            color: white;">로그인</button>
+          
+  </div>
+</div>
+
+
+<!-- footer section starts -->
+
+<section class="footer">
+
+  <div class="box-container">
+
+    <div class="box">
+      <h3>Shop</h3>
+        <a href="#">장르소설</a>
+        <a href="#">시/에세이</a>
+        <a href="#">청소년문학</a>
+        <a href="#">아동문학</a>
+    </div>
+
+    <div class="box">
+      <h3>About</h3>
+      <a href="#">북사이클</a>
+      <a href="#">사용 가이드</a>
+      <a href="#">FAQ</a>
+    </div>
+
+    <div class="box">
+      <h3>Account</h3>
+      <a href="#">마이페이지</a>
+      <a href="#">마이북</a>
+      <a href="#">주문내역</a>
+      <a href="#">장바구니</a>
+    </div>
+
+    <div class="box">
+      <h3>Quick Link</h3>
+      <a href="#">개인정보처리방침</a>
+      <a href="#">이용약관</a>
+      <a href="#">운영정책</a>
+    </div>
+
+    <div class="box">
+      <h3>Contact Us</h3>
+      <a href="#">+82 10-1234-5678</a>
+      <a href="#">bookcycle@bkcy.kr</a>
+      <a href="#">전남 무안군 청계면 1666</a>
+      <img src="images/sns.png" alt="">
+    </div>
+
+  </div>
+
+  <div class="credit"> created by <span> mnu. wp. teamD </span> | all rights reserved. </div>
+
+</section>
+
+<!-- footer section ends-->
+
+</body>
+</html>

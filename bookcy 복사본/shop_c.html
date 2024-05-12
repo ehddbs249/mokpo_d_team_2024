@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <link rel="stylesheet" th:href="@{css/style.css}" />
+  <script src="https://kit.fontawesome.com/70cf0af2bf.js" crossorigin="anonymous"></script>
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
+  <link href="css/style.css" rel="stylesheet" />
+  <link href="css/responsive.css" rel="stylesheet" />
+
+  <style> 
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-size: 16px;
+    }
+    .shop {
+  background-color: #fafafa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.advertiser {
+  background: #d9d9d9;
+  margin-bottom: 140px;
+  width: 100%;
+  height: 380px;
+}
+
+.shop-main {
+  margin-bottom: 160px;
+  display: flex;
+  flex-direction: row;
+  width: fit-content;
+  box-sizing: border-box;
+}
+
+.shop-main-category {
+  margin-right: 128px;
+  display: flex;
+  width: 245px;
+  box-sizing: border-box;
+}
+
+#line {
+  background-color: #282828;
+  margin-right: 35px;
+  width: 4px;
+  height: 358px;
+}
+
+.shop-main-category__box {
+  margin: 5px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 200px;
+  height: fit-content;
+  box-sizing: border-box;
+}
+
+.category {
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: space-between;
+  width: 200px;
+  box-sizing: border-box;
+  align-items: center;
+}
+
+.category_text {
+  margin-right: 12px;
+  width: 180px;
+  font-size: 16px;
+  color: #282828;
+}
+
+.category_vector {
+  margin: 5px 0px;
+  display: flex;
+  width: 8px;
+  height: 12px;
+  box-sizing: border-box;
+  align-items: center;
+}
+
+.category_vector a {
+  width: 8px;
+  height: 12px;
+}
+
+.shop-main-search {
+  border-radius: 20px;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  padding: 35px 40px;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.search-form__input {
+  border-radius: 4px;
+  margin-bottom: 15px;
+  border: 1px solid #858585;
+  background-color: #ffffff;
+  width: 378px;
+  height: 54px;
+}
+
+.booklist {
+  margin-bottom: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: fit-content;
+  box-sizing: border-box;
+  justify-content: center;
+}
+
+.booklist__button {
+  margin-bottom: 40px;
+  display: flex;
+  box-sizing: border-box;
+}
+
+.booklist__button div {
+  border-radius: 4px;
+  position: relative;
+  display: flex;
+  padding: 18px 0px;
+  width: 450px;
+  box-sizing: border-box;
+  font-size: 14px;
+  justify-content: center;
+}
+
+.button__select {
+  background-color: #282828;
+  color: #ffffff;
+}
+
+.button__not__select {
+  background-color: #ffffff;
+  color: #282828;
+}
+
+.booklist_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: fit-content;
+  box-sizing: border-box;
+}
+
+.booklist_container__floor {
+  display: flex;
+  box-sizing: border-box;
+  gap: 0px 30px;
+  width: fit-content;
+  margin-bottom: 40px;
+}
+
+.bookbox {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.booklist_container__floor__img {
+  border-radius: 4px;
+  background-color: #f5f5f5;
+  width: 200px;
+  height: 215px;
+  margin-bottom: 16px;
+}
+
+.booklist_container__floor__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  width: fit-content;
+  box-sizing: border-box;
+}
+
+.booklist_container__floor__content:first-child {
+  margin-bottom: 8px;
+  display: inline-block;
+  font-size: 16px;
+  color: #000000;
+}
+
+.booklist_container__floor__content:nth-child(2) {
+  margin-bottom: 8px;
+  display: inline-block;
+  justify-content: start;
+  font-size: medium;
+  font-size: 14px;
+  color: #000000;
+}
+
+.booklist_container__floor__content:nth-child(3) {
+  display: flex;
+  justify-content: flex-start;
+  width: fit-content;
+  box-sizing: border-box;
+}
+  
+  </style>
+
+  <title>Bookcycle</title>
+
+</head>
+
+<body>
+
+<!-- header section starts -->
+
+<header>
+
+  <div class="header-title">
+    <a href="home.html">Bookcycle</a>
+  </div>
+  <div class="header-category">
+      <div><a href="home.html">Home</a></div>
+      <div><a href="shop.html">Shop</a></div>
+      <div><a href="about.html">About</a></div>
+      <div><a href="signup.html">Sign Up</a></div>
+  </div>
+  <div class="header-column">
+      <div class="header-column__search">
+        <form action="#">
+          <input type="text" name="search" placeholder="What are you looing for?"/>
+          <a href="serch.html" class="fas fa-magnifying-glass"></a>
+        </form>
+      </div>
+      <div class="header-column__icons">
+        <a href="/siteuser/login" class="fas fa-shopping-cart"></a>
+        <a href="/siteuser/login" class="far fa-user"></a>
+      </div>
+  </div>
+
+</header>
+
+<!-- header section end -->
+    <div class="shop">
+        <div class="advertiser"></div>
+        <div class="shop-main">
+          <div class="shop-main-category">
+            <div id="line"></div>
+            <div class="shop-main-category__box">
+              <div class="category">
+                <span class="category_text">전체 도서 보기</span>
+                <div class="category_vector">
+                  <a href="#" class="fas fa-arrow-right"></a>
+                </div>
+              </div>
+              <div class="category">
+                <span class="category_text">장르 소설</span>
+                <div class="category_vector">
+                  <a href="#" class="fas fa-arrow-right"></a>
+                </div>
+              </div>
+              <div class="category">
+                <span class="category_text">시/에세이</span>
+                <div class="category_vector">
+                  <a href="#" class="fas fa-arrow-right"></a>
+                </div>
+              </div>
+              <div class="category">
+                <span class="category_text">청소년문학</span>
+                <div class="category_vector">
+                  <a href="#" class="fas fa-arrow-right"></a>
+                </div>
+              </div>
+              <div class="category">
+                <span class="category_text">아동문학</span>
+                <div class="category_vector">
+                  <a href="#" class="fas fa-arrow-right"></a>
+                </div>
+              </div>
+              <div class="category">
+                <span class="category_text">외국어/문서</span>
+                <div class="category_vector">
+                  <a href="#" class="fas fa-arrow-right"></a>
+                </div>
+              </div>
+              <div class="category">
+                <span class="category_text">인문/과학/자기계발</span>
+                <div class="category_vector">
+                  <a href="#" class="fas fa-arrow-right"></a>
+                </div>
+              </div>
+              <div class="category">
+                <span class="category_text">교재/수험서/참고서</span>
+                <div class="category_vector">
+                  <a href="#" class="fas fa-arrow-right"></a>
+                </div>
+              </div>
+              <div class="category">
+                <span class="category_text">잡지/만화</span>
+                <div class="category_vector">
+                  <a href="#" class="fas fa-arrow-right"></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="shop-main-search">
+            <form class="search-form">
+              <input
+                class="search-form__input"
+                type="text"
+                placeholder="어떤 책을 찾고 계신가요?"
+              />
+              <input type="submit" class="btn" value="검색하기" />
+            </form>
+          </div>
+        </div>
+        <div class="booklist">
+          <div class="booklist_container">
+            <div class="booklist_container__floor">
+              <div class="bookbox">
+                <div class="booklist_container__floor__img"></div>
+                <div class="booklist_container__floor__content">
+                  <div>책 제목입니다아아아아</div>
+                  <div>저자 이름은 여기</div>
+                  <div>
+                    <div>
+                      <span> 7,000₩ </span>
+                    </div>
+                    <div>
+                      <span> (최상) </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="bookbox">
+                <div class="booklist_container__floor__img"></div>
+                <div class="booklist_container__floor__content">
+                  <div>책 제목입니다아아아아</div>
+                  <div>저자 이름은 여기</div>
+                  <div>
+                    <div>
+                      <span> 7,000₩ </span>
+                    </div>
+                    <div>
+                      <span> (최상) </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="bookbox">
+                <div class="booklist_container__floor__img"></div>
+                <div class="booklist_container__floor__content">
+                  <div>책 제목입니다아아아아</div>
+                  <div>저자 이름은 여기</div>
+                  <div>
+                    <div>
+                      <span> 7,000₩ </span>
+                    </div>
+                    <div>
+                      <span> (최상) </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="bookbox">
+                <div class="booklist_container__floor__img"></div>
+                <div class="booklist_container__floor__content">
+                  <div>책 제목입니다아아아아</div>
+                  <div>저자 이름은 여기</div>
+                  <div>
+                    <div>
+                      <span> 7,000₩ </span>
+                    </div>
+                    <div>
+                      <span> (최상) </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="booklist_container__floor">
+              <div class="bookbox">
+                <div class="booklist_container__floor__img"></div>
+                <div class="booklist_container__floor__content">
+                  <div>책 제목입니다아아아아</div>
+                  <div>저자 이름은 여기</div>
+                  <div>
+                    <div>
+                      <span> 7,000₩ </span>
+                    </div>
+                    <div>
+                      <span> (최상) </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="bookbox">
+                <div class="booklist_container__floor__img"></div>
+                <div class="booklist_container__floor__content">
+                  <div>책 제목입니다아아아아</div>
+                  <div>저자 이름은 여기</div>
+                  <div>
+                    <div>
+                      <span> 7,000₩ </span>
+                    </div>
+                    <div>
+                      <span> (최상) </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="bookbox">
+                <div class="booklist_container__floor__img"></div>
+                <div class="booklist_container__floor__content">
+                  <div>책 제목입니다아아아아</div>
+                  <div>저자 이름은 여기</div>
+                  <div>
+                    <div>
+                      <span> 7,000₩ </span>
+                    </div>
+                    <div>
+                      <span> (최상) </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="bookbox">
+                <div class="booklist_container__floor__img"></div>
+                <div class="booklist_container__floor__content">
+                  <div>책 제목입니다아아아아</div>
+                  <div>저자 이름은 여기</div>
+                  <div>
+                    <div>
+                      <span> 7,000₩ </span>
+                    </div>
+                    <div>
+                      <span> (최상) </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="booklist_container__floor">
+              <div class="bookbox">
+                <div class="booklist_container__floor__img"></div>
+                <div class="booklist_container__floor__content">
+                  <div>책 제목입니다아아아아</div>
+                  <div>저자 이름은 여기</div>
+                  <div>
+                    <div>
+                      <span> 7,000₩ </span>
+                    </div>
+                    <div>
+                      <span> (최상) </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="bookbox">
+                <div class="booklist_container__floor__img"></div>
+                <div class="booklist_container__floor__content">
+                  <div>책 제목입니다아아아아</div>
+                  <div>저자 이름은 여기</div>
+                  <div>
+                    <div>
+                      <span> 7,000₩ </span>
+                    </div>
+                    <div>
+                      <span> (최상) </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="bookbox">
+                <div class="booklist_container__floor__img"></div>
+                <div class="booklist_container__floor__content">
+                  <div>책 제목입니다아아아아</div>
+                  <div>저자 이름은 여기</div>
+                  <div>
+                    <div>
+                      <span> 7,000₩ </span>
+                    </div>
+                    <div>
+                      <span> (최상) </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="bookbox">
+                <div class="booklist_container__floor__img"></div>
+                <div class="booklist_container__floor__content">
+                  <div>책 제목입니다아아아아</div>
+                  <div>저자 이름은 여기</div>
+                  <div>
+                    <div>
+                      <span> 7,000₩ </span>
+                    </div>
+                    <div>
+                      <span> (최상) </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+<!-- footer section starts -->
+
+<section class="footer">
+
+  <div class="box-container">
+
+    <div class="box">
+      <h3>Shop</h3>
+        <a href="#">장르소설</a>
+        <a href="#">시/에세이</a>
+        <a href="#">청소년문학</a>
+        <a href="#">아동문학</a>
+    </div>
+
+    <div class="box">
+      <h3>About</h3>
+      <a href="#">북사이클</a>
+      <a href="#">사용 가이드</a>
+      <a href="#">FAQ</a>
+    </div>
+
+    <div class="box">
+      <h3>Account</h3>
+      <a href="#">마이페이지</a>
+      <a href="#">마이북</a>
+      <a href="#">주문내역</a>
+      <a href="#">장바구니</a>
+    </div>
+
+    <div class="box">
+      <h3>Quick Link</h3>
+      <a href="#">개인정보처리방침</a>
+      <a href="#">이용약관</a>
+      <a href="#">운영정책</a>
+    </div>
+
+    <div class="box">
+      <h3>Contact Us</h3>
+      <a href="#">+82 10-1234-5678</a>
+      <a href="#">bookcycle@bkcy.kr</a>
+      <a href="#">전남 무안군 청계면 1666</a>
+      <img src="images/sns.png" alt="">
+    </div>
+
+  </div>
+
+  <div class="credit"> created by <span> mnu. wp. teamD </span> | all rights reserved. </div>
+
+</section>
+
+<!-- footer section ends-->
+
+</body>
+</html>
