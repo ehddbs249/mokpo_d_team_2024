@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" th:href="@{css/style.css}" />
+    <script
+      src="https://kit.fontawesome.com/70cf0af2bf.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>MainPage</title>
+  </head>
+  <body>
+    <div class="header">
+      <div class="header-title"><a href="/siteuser">Bookcycle</a></div>
+      <div class="header-category">
+        <div><a href="/siteuser">Home</a></div>
+        <div><a href="/siteuser/shop">Shop</a></div>
+        <div>About</div>
+        <div><a href="/siteuser/signup">Sign Up</a></div>
+      </div>
+      <div class="header-column">
+        <div class="header-column__search">
+          <form action="">
+            <input
+              type="text"
+              name="search"
+              placeholder="What are you looing for?"
+            />
+          </form>
+        </div>
+       <div class="header-column__icons">
+          <!-- 로그인 상태 확인 -->
+          <div th:if="${session.email == null}">
+            <!-- 로그인하지 않은 경우, 로그인 페이지로 이동하는 링크 -->
+            <a href="/siteuser/login" class="fas fa-shopping-cart"></a>
+            <a href="/siteuser/login" class="far fa-user"></a>
+          </div>
+          <div th:unless="${session.email == null}">
+            <!-- 로그인한 경우, 마이페이지로 이동하는 링크 -->
+            <a href="/siteuser/mypage" class="fas fa-shopping-cart"></a>
+            <a href="/siteuser/mypage" class="far fa-user"></a>
+            <!-- 로그아웃 링크 추가 -->
+            <a href="/siteuser/logout" class="logout-link">로그아웃</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="index">
+      <div class="index-text">
+        <div>recycle BOOKSHOP</div>
+        <div>for the</div>
+        <div id="last-line">
+          <div id="small-text">
+            <div>다독가들을 위한</div>
+            <div>중고서점</div>
+          </div>
+          <div id="last-line_bookworm">BOOKworm</div>
+        </div>
+      </div>
+      <div class="index-form">
+        <div>어떤 책을 찾고 계신가요?</div>
+        <div class="index-form__input">
+          <form action="">
+            <input type="text" name="title" placeholder="" />
+            <input type="text" name="anthor" placeholder="" />
+            <input type="text" name="state" placeholder="" />
+            <input type="text" name="price" placeholder="" />
+          </form>
+        </div>
+        <div class="button_con">
+          <button class="btn">검색하기</button>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="footer_column">
+        <div class="footer_column_box">
+          <div class="footer_column_box_title">Category</div>
+          <div class="footer_column_box_content">
+            <a href="#">장르소설</a>
+            <a href="#">시/에세이</a>
+            <a href="#">청소년문학</a>
+            <a href="#">아동문학</a>
+          </div>
+        </div>
+        <div class="footer_column_box">
+          <div class="footer_column_box_title">About</div>
+          <div class="footer_column_box_content">
+            <a href="#">서점 북사이클</a>
+            <a href="#">사용 가이드</a>
+            <a href="#">FAQ</a>
+          </div>
+        </div>
+        <div class="footer_column_box">
+          <div class="footer_column_box_title">Account</div>
+          <div class="footer_column_box_content">
+            <a href="#">마이페이지</a>
+            <a href="#">로그인/회원가입</a>
+            <a href="#">장바구니</a>
+            <a href="#">마이북</a>
+          </div>
+        </div>
+        <div class="footer_column_box">
+          <div class="footer_column_box_title">Quick Link</div>
+          <div class="footer_column_box_content">
+            <a href="#">개인정보처리방침</a>
+            <a href="#">이용약관</a>
+            <a href="#">운영정책</a>
+            <a href="#">Contact Us</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer_coper"></div>
+    </div>
+  </body>
+</html>
